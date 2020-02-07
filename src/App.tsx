@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import matches from './data';
+import teams from './data';
 
 const App = () => {
+  const toto: string ="toto";
+  console.log(toto);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Les matchs</h1>
+         {matches.map((match)=>(
+         <div>
+           <h2>{match.name}</h2>
+           <p>Le score est : {match.scores}</p>
+        
+        </div>
+         ))}
+       
+          {teams.map((team)=>(
+            <p>{team.fautes}</p>
+          ))}
     </div>
   );
 }
 
 export default App;
+{/** {matches.map((x)=>JSON.stringify(x))}
+retourne du json 
+*/}
+ 
